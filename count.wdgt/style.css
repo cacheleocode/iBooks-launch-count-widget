@@ -1,0 +1,18 @@
+*
+{
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+}
+
+body
+{
+	margin: 0;
+}
+
+#stage
+{
+	position: relative;
+	height: 768px;
+	width: 1024px;
+	background: magenta;
+}

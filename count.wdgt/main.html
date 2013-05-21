@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="style.css">
+    
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+        
+    <script>
+    	// prevent default gesture behavior
+		document.addEventListener('touchstart', function (e) {e.preventDefault();}, false);
+		document.addEventListener('touchmove', function (e) {e.preventDefault();}, false);	
+		document.addEventListener('touchend', function (e) {e.preventDefault();}, false);
+
+		var starts=1;
+		var exists=0;
+
+		function update() {
+			document.getElementById('open').innerHTML = 'Starts = '+starts;
+			document.getElementById('closed').innerHTML = 'Exists = '+exists;
+		};
+		
+		widget.pauseAudioVisual = function() {
+			exists++;
+			update();
+		};
+
+		widget.didEnterWidgetMode = function(x) {
+			starts++;
+			update();
+		};
+	</script>
+</head>
+<body onselectstart="return false;">
+	<div id="stage">
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<p id="open"></p>
+        <p id="closed"></p>		
+	</div> <!-- #stage -->
+</body>
+</html>
